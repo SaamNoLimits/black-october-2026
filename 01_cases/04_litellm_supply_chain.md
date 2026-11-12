@@ -21,6 +21,12 @@ The malware's defining trait: it executed from a **Python path-configuration fil
 
 **Root cause chain (LiteLLM postmortem, 24 Oct):** a config file containing a **master key** was committed to the public `LiteLLM-Labs/lite-harness` repo on **27 May 2026** and never revoked. On **10 October** the actor used it to reach the LiteLLM Agent Platform and extract an **organization owner's GitHub CLI OAuth token**, giving owner-level access to all repos — and thus the ability to cut a malicious release. This is LiteLLM's **second** supply-chain compromise of 2026 (the first was the March "TeamPCP" incident).
 
+## The play, on the board
+
+<p align="center">
+  <img src="../assets/diagrams/litellm_supplychain.svg" alt="LiteLLM supply-chain flow — a master key leaked in May becomes a GitHub token, poisons release 1.107.0 on PyPI and Docker; victims install it, cook.pth runs before any import, privcollect steals 16 credential categories and exfiltrates to litellm.dev" width="100%">
+</p>
+
 ## Attack chain → MITRE ATT&CK
 
 | Phase | Technique | ID |

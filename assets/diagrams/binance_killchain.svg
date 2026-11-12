@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Binance kill chain tactical board">
+  <defs>
+    <linearGradient id="pitch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e2c24"/>
+      <stop offset="1" stop-color="#0a1f1a"/>
+    </linearGradient>
+    <marker id="ahWhite" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#eaf2ef"/>
+    </marker>
+    <marker id="ahRun" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff9f40"/>
+    </marker>
+    <marker id="ahGoal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff5a4d"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#pitch)"/>
+
+  <!-- pitch markings -->
+  <g stroke="#ffffff" stroke-opacity="0.09" fill="none" stroke-width="2">
+    <rect x="44" y="96" width="1192" height="584" rx="6"/>
+    <line x1="640" y1="96" x2="640" y2="680"/>
+    <circle cx="640" cy="388" r="78"/>
+    <circle cx="640" cy="388" r="4" fill="#ffffff" fill-opacity="0.18" stroke="none"/>
+    <rect x="44" y="258" width="150" height="260"/>
+    <rect x="1086" y="258" width="150" height="260"/>
+  </g>
+
+  <!-- title -->
+  <text x="48" y="54" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="27" font-weight="800" fill="#eaf2ef">BINANCE KILL CHAIN · THE $6.34B PLAY</text>
+  <text x="50" y="79" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="15" fill="#7fd4c5" letter-spacing="1">TraderTraitor (DPRK) · June → October 2026 · no product CVE</text>
+
+  <!-- legend -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="13" fill="#b9c7c2">
+    <line x1="880" y1="52" x2="922" y2="52" stroke="#eaf2ef" stroke-width="3" marker-end="url(#ahWhite)"/>
+    <text x="930" y="56">access / credential use</text>
+    <line x1="880" y1="74" x2="922" y2="74" stroke="#ff9f40" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ahRun)"/>
+    <text x="930" y="78">lateral pivot (the run)</text>
+  </g>
+
+  <!-- ===== passes / runs (drawn first, nodes drawn over) ===== -->
+  <g fill="none" stroke-width="4">
+    <!-- N1 -> pivot -->
+    <path d="M198,268 Q330,300 466,372" stroke="#eaf2ef" marker-end="url(#ahWhite)"/>
+    <!-- N2 -> pivot -->
+    <path d="M198,502 Q330,470 466,402" stroke="#eaf2ef" marker-end="url(#ahWhite)"/>
+    <!-- pivot -> token (run) -->
+    <path d="M514,372 Q630,300 734,264" stroke="#ff9f40" stroke-dasharray="8 6" marker-end="url(#ahRun)"/>
+    <!-- pivot -> Eng C (run) -->
+    <path d="M514,402 Q630,470 734,508" stroke="#ff9f40" stroke-dasharray="8 6" marker-end="url(#ahRun)"/>
+    <!-- token -> container -->
+    <path d="M786,264 Q890,300 956,372" stroke="#eaf2ef" marker-end="url(#ahWhite)"/>
+    <!-- Eng C -> container -->
+    <path d="M786,508 Q890,470 956,402" stroke="#eaf2ef" marker-end="url(#ahWhite)"/>
+    <!-- container -> GOAL -->
+    <path d="M1008,388 L1092,388" stroke="#ff5a4d" stroke-width="6" marker-end="url(#ahGoal)"/>
+  </g>
+
+  <!-- ===== nodes (players) ===== -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif" text-anchor="middle">
+    <!-- N1 Entry A -->
+    <g>
+      <circle cx="175" cy="250" r="27" fill="#13352b" stroke="#4fd1c5" stroke-width="3"/>
+      <text x="175" y="258" font-size="22" font-weight="800" fill="#eaf2ef">1</text>
+      <rect x="86" y="286" width="178" height="48" rx="8" fill="#0c241e" stroke="#2a4a41"/>
+      <text x="175" y="306" font-size="13.5" font-weight="700" fill="#eaf2ef">Search-ad trojan · JUN</text>
+      <text x="175" y="324" font-size="12" fill="#9fb3ad">wallet engineer A laptop</text>
+    </g>
+    <!-- N2 Entry B -->
+    <g>
+      <circle cx="175" cy="520" r="27" fill="#13352b" stroke="#4fd1c5" stroke-width="3"/>
+      <text x="175" y="528" font-size="22" font-weight="800" fill="#eaf2ef">2</text>
+      <rect x="86" y="556" width="178" height="48" rx="8" fill="#0c241e" stroke="#2a4a41"/>
+      <text x="175" y="576" font-size="13.5" font-weight="700" fill="#eaf2ef">Fake interview · SEP</text>
+      <text x="175" y="594" font-size="12" fill="#9fb3ad">engineer B (MacSync stealer)</text>
+    </g>
+    <!-- N3 pivot (playmaker) -->
+    <g>
+      <circle cx="490" cy="388" r="33" fill="#3a2410" stroke="#ff9f40" stroke-width="3.5"/>
+      <text x="490" y="397" font-size="24" font-weight="800" fill="#ffd9a8">3</text>
+      <rect x="392" y="430" width="196" height="50" rx="8" fill="#0c241e" stroke="#5a4020"/>
+      <text x="490" y="451" font-size="13.5" font-weight="700" fill="#ffcf99">Internal AI tool · OCT 20</text>
+      <text x="490" y="469" font-size="12" fill="#9fb3ad">pivots host → host, no alert</text>
+    </g>
+    <!-- N4 deploy token -->
+    <g>
+      <circle cx="760" cy="250" r="27" fill="#13352b" stroke="#eaf2ef" stroke-width="3"/>
+      <text x="760" y="258" font-size="22" font-weight="800" fill="#eaf2ef">4</text>
+      <rect x="668" y="180" width="184" height="48" rx="8" fill="#0c241e" stroke="#2a4a41"/>
+      <text x="760" y="200" font-size="13.5" font-weight="700" fill="#eaf2ef">Deploy token (Eng A)</text>
+      <text x="760" y="218" font-size="12" fill="#9fb3ad">standing container cred</text>
+    </g>
+    <!-- N5 Eng C -->
+    <g>
+      <circle cx="760" cy="520" r="27" fill="#13352b" stroke="#eaf2ef" stroke-width="3"/>
+      <text x="760" y="528" font-size="22" font-weight="800" fill="#eaf2ef">5</text>
+      <rect x="668" y="556" width="184" height="48" rx="8" fill="#0c241e" stroke="#2a4a41"/>
+      <text x="760" y="576" font-size="13.5" font-weight="700" fill="#eaf2ef">Eng C machine · OCT 29</text>
+      <text x="760" y="594" font-size="12" fill="#9fb3ad">attacker logs on</text>
+    </g>
+    <!-- N6 container+signing -->
+    <g>
+      <circle cx="982" cy="388" r="30" fill="#3a1414" stroke="#ff5a4d" stroke-width="3.5"/>
+      <text x="982" y="397" font-size="22" font-weight="800" fill="#ffd0cb">6</text>
+      <rect x="876" y="430" width="212" height="50" rx="8" fill="#0c241e" stroke="#5a2420"/>
+      <text x="982" y="451" font-size="13.5" font-weight="700" fill="#ffb3ab">Container → signing service</text>
+      <text x="982" y="469" font-size="12" fill="#9fb3ad">unauthorized withdrawals</text>
+    </g>
+  </g>
+
+  <!-- GOAL -->
+  <g>
+    <rect x="1096" y="320" width="92" height="136" rx="4" fill="#120e0e" stroke="#ff5a4d" stroke-width="3"/>
+    <g stroke="#ff5a4d" stroke-opacity="0.35" stroke-width="1">
+      <line x1="1110" y1="320" x2="1110" y2="456"/><line x1="1124" y1="320" x2="1124" y2="456"/>
+      <line x1="1138" y1="320" x2="1138" y2="456"/><line x1="1152" y1="320" x2="1152" y2="456"/>
+      <line x1="1166" y1="320" x2="1166" y2="456"/>
+      <line x1="1096" y1="340" x2="1188" y2="340"/><line x1="1096" y1="365" x2="1188" y2="365"/>
+      <line x1="1096" y1="390" x2="1188" y2="390"/><line x1="1096" y1="415" x2="1188" y2="415"/>
+      <line x1="1096" y1="440" x2="1188" y2="440"/>
+    </g>
+    <text x="1142" y="383" text-anchor="middle" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="25" font-weight="800" fill="#ff6a5a">$6.34B</text>
+    <text x="1142" y="406" text-anchor="middle" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="12" fill="#ffb3ab">10 chains · ~20 min</text>
+    <text x="1142" y="478" text-anchor="middle" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="13" font-weight="700" fill="#ff6a5a">GOAL</text>
+  </g>
+
+  <text x="48" y="702" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="12.5" fill="#6f8580">Lesson: a laptop holding a production deploy token IS production. Short-lived, hardware-bound creds leave nothing to steal in October.</text>
+</svg>

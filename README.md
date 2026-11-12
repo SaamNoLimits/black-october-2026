@@ -45,6 +45,7 @@ October 2026 was bad enough that the security press settled on a name for it: **
 - [What this is (and isn&rsquo;t)](#-what-this-is-and-isnt)
 - [Repository layout](#-repository-layout)
 - [The cases](#-the-cases)
+- [Attack-flow diagrams](#-attack-flow-diagrams)
 - [The three attack patterns (MITRE ATT&CK)](#-the-three-attack-patterns-mitre-attck)
 - [Detections](#-detections)
 - [The Rust toolkit](#-the-rust-toolkit)
@@ -117,9 +118,44 @@ black-october-2026/
 
 ---
 
+## 🎨 Attack-flow diagrams
+
+The marquee chains, drawn out as coach&rsquo;s-board plays — the full set lives in [`assets/diagrams/`](assets/diagrams/) and is embedded in each case file.
+
+**Binance — the $6.34B play** &nbsp;·&nbsp; [case →](01_cases/01_binance_traertraitor_heist.md)
+
+<p align="center">
+  <img src="assets/diagrams/binance_killchain.svg" alt="Binance kill chain tactical board" width="100%">
+</p>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**LiteLLM — supply-chain flow** &nbsp;·&nbsp; [case →](01_cases/04_litellm_supply_chain.md)
+
+<img src="assets/diagrams/litellm_supplychain.svg" alt="LiteLLM 1.107.0 supply-chain flow" width="100%">
+
+</td>
+<td width="50%" valign="top">
+
+**ConnectWise — one key, 173+ tenants** &nbsp;·&nbsp; [case →](01_cases/03_connectwise_cloud_backup.md)
+
+<img src="assets/diagrams/connectwise_flow.svg" alt="ConnectWise app-key fan-out" width="100%">
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 🧬 The three attack patterns (MITRE ATT&CK)
 
 Across every case, three patterns dominate. A single good detection on each pays off repeatedly — full matrix in **[03_attack_mapping_mitre.md](03_attack_mapping_mitre.md)**.
+
+<p align="center">
+  <img src="assets/diagrams/attack_patterns.svg" alt="The three plays of Black October: Exploit the edge (T1190), Abuse trust (T1199/T1195/T1528/T1078), and Evade at delivery (T1553.005), each with its cases and the detection leverage that stops it" width="100%">
+</p>
 
 | Pattern | Core technique | Shows up in | Detection leverage |
 |---|---|---|---|

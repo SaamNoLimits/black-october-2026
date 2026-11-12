@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 520" width="1280" height="520" role="img" aria-label="ConnectWise Cloud Backup app-key abuse fan-out">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#11161f"/>
+    </linearGradient>
+    <marker id="cw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#cf9cee"/></marker>
+    <marker id="cr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff5a4d"/></marker>
+  </defs>
+
+  <rect width="1280" height="520" fill="url(#cbg)"/>
+  <text x="40" y="46" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="24" font-weight="800" fill="#f0f6fc">CONNECTWISE · ONE KEY, 173+ TENANTS</text>
+  <text x="42" y="70" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="14" fill="#c792ea" letter-spacing="1">a stolen vendor app secret → app-only sign-in → every tenant that ever consented the app</text>
+
+  <!-- fan arrows (behind) -->
+  <g fill="none" stroke="#cf9cee" stroke-width="3">
+    <path d="M650,268 Q685,180 698,168" marker-end="url(#cw)"/>
+    <path d="M650,278 Q685,238 698,232" marker-end="url(#cw)"/>
+    <path d="M650,292 Q685,318 698,326" marker-end="url(#cw)"/>
+    <path d="M650,302 Q685,382 698,392" marker-end="url(#cw)"/>
+  </g>
+  <!-- straight connectors -->
+  <g fill="none" stroke="#cf9cee" stroke-width="3.5">
+    <line x1="342" y1="280" x2="396" y2="280" marker-end="url(#cw)"/>
+  </g>
+  <!-- cluster -> outcomes (red) -->
+  <g fill="none" stroke="#ff5a4d" stroke-width="3.5">
+    <path d="M1022,210 L1048,210" marker-end="url(#cr)"/>
+    <path d="M1022,360 L1048,360" marker-end="url(#cr)"/>
+  </g>
+
+  <!-- Box 1 -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <rect x="40" y="232" width="302" height="96" rx="10" fill="#161b22" stroke="#2b2240"/>
+    <rect x="40" y="232" width="6" height="96" rx="3" fill="#c792ea"/>
+    <text x="62" y="262" font-size="15" font-weight="800" fill="#cf9cee">1 · Stolen app secret</text>
+    <text x="62" y="286" font-size="12.5" fill="#c9d1d9">ConnectWise Cloud Backup (SkyKick)</text>
+    <text x="62" y="305" font-size="11.5" fill="#8b949e" font-family="monospace">app 506e08f9-6e9a-4da4-942b-…</text>
+  </g>
+
+  <!-- Box 2 -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <rect x="398" y="232" width="252" height="96" rx="10" fill="#161b22" stroke="#2b2240"/>
+    <rect x="398" y="232" width="6" height="96" rx="3" fill="#c792ea"/>
+    <text x="420" y="262" font-size="15" font-weight="800" fill="#cf9cee">2 · App-only sign-in</text>
+    <text x="420" y="286" font-size="12.5" fill="#c9d1d9">authenticate AS the app</text>
+    <text x="420" y="305" font-size="12.5" fill="#c9d1d9">no user · no MFA prompt</text>
+  </g>
+
+  <!-- Cluster box -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <rect x="698" y="120" width="320" height="320" rx="12" fill="#12131f" stroke="#2b2240"/>
+    <text x="858" y="150" text-anchor="middle" font-size="15" font-weight="800" fill="#cf9cee">3 · 173+ Microsoft 365 tenants</text>
+    <text x="858" y="170" text-anchor="middle" font-size="11.5" fill="#8b949e">Exchange · OneDrive · SharePoint · Teams · Graph</text>
+    <!-- tenant dots grid -->
+    <g fill="#1d1a2e" stroke="#6f5aa0" stroke-width="1.5">
+      <circle cx="742" cy="212" r="13"/><circle cx="800" cy="212" r="13"/><circle cx="858" cy="212" r="13"/><circle cx="916" cy="212" r="13"/><circle cx="974" cy="212" r="13"/>
+      <circle cx="742" cy="262" r="13"/><circle cx="800" cy="262" r="13"/><circle cx="858" cy="262" r="13"/><circle cx="916" cy="262" r="13"/><circle cx="974" cy="262" r="13"/>
+      <circle cx="742" cy="312" r="13"/><circle cx="800" cy="312" r="13"/><circle cx="858" cy="312" r="13"/><circle cx="916" cy="312" r="13"/><circle cx="974" cy="312" r="13"/>
+      <circle cx="742" cy="362" r="13"/><circle cx="800" cy="362" r="13"/><circle cx="858" cy="362" r="13"/><circle cx="916" cy="362" r="13"/><circle cx="974" cy="362" r="13"/>
+    </g>
+    <text x="858" y="415" text-anchor="middle" font-size="12" fill="#8b949e">… each previously consented the app (dormant too)</text>
+  </g>
+
+  <!-- Outcomes -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <rect x="1050" y="170" width="200" height="82" rx="10" fill="#1f1413" stroke="#5a2420"/>
+    <rect x="1050" y="170" width="6" height="82" rx="3" fill="#ff5a4d"/>
+    <text x="1070" y="198" font-size="14" font-weight="800" fill="#ff6a5a">4 · Escalate</text>
+    <text x="1070" y="220" font-size="12" fill="#e6b3ae">self-assign directory role</text>
+    <text x="1070" y="238" font-size="11.5" fill="#9a8b88">T1098.003</text>
+
+    <rect x="1050" y="320" width="200" height="82" rx="10" fill="#1f1413" stroke="#5a2420"/>
+    <rect x="1050" y="320" width="6" height="82" rx="3" fill="#ff5a4d"/>
+    <text x="1070" y="348" font-size="14" font-weight="800" fill="#ff6a5a">5 · Persist</text>
+    <text x="1070" y="370" font-size="12" fill="#e6b3ae">plant backdoor credential</text>
+    <text x="1070" y="388" font-size="11.5" fill="#9a8b88">T1098.001</text>
+  </g>
+
+  <text x="40" y="498" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="12.5" fill="#6e7681">Hunt ≥ 13 Oct: service-principal sign-ins by the app ID + "Add app role / credentials" audit events. Source IP 144.172.64.128.</text>
+</svg>

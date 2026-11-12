@@ -26,6 +26,12 @@ Reconstructed timeline (Binance's own post-incident report + Palo Alto Networks 
 - **29 October 2026 — The drain.** Between 17:15 and 19:56 UTC the attackers logged onto Engineer C's machine, used Engineer A's stolen deploy credential to **deploy a container**, and ran a script that reached Binance's internal **wallet signing service**, submitting unauthorized withdrawals. ~$6.34B moved across 10 chains.
 - **31 October 2026 — Attribution.** FBI/USSS/IRS-CI joint alert attributes to TraderTraitor and urges providers to block the identified addresses. (On 3 Nov, DPRK's Kim Yo Jong denied involvement.)
 
+## The play, on the board
+
+<p align="center">
+  <img src="../assets/diagrams/binance_killchain.svg" alt="Binance kill chain — tactical board: Jun search-ad trojan and Sep fake interview feed an internal AI tool that pivots to a deploy token and Engineer C, then a container deploy reaches the signing service and drains $6.34B" width="100%">
+</p>
+
 ## Attack chain → MITRE ATT&CK
 
 | Phase | Technique | ID |

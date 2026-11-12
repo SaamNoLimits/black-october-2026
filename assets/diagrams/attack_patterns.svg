@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 580" width="1280" height="580" role="img" aria-label="The three Black October attack patterns">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#11161f"/>
+    </linearGradient>
+    <marker id="pa_o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff9f40"/></marker>
+    <marker id="pa_t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4fd1c5"/></marker>
+    <marker id="pa_r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff5a4d"/></marker>
+  </defs>
+
+  <rect width="1280" height="580" fill="url(#pbg)"/>
+  <text x="40" y="48" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="24" font-weight="800" fill="#f0f6fc">THE THREE PLAYS OF BLACK OCTOBER</text>
+  <text x="42" y="72" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="14" fill="#8b949e" letter-spacing="1">how every October case attacked — and where one good detection stops each channel</text>
+
+  <!-- detection line -->
+  <line x1="884" y1="104" x2="884" y2="556" stroke="#58a6ff" stroke-width="2.5" stroke-dasharray="6 6" stroke-opacity="0.7"/>
+  <text x="884" y="98" text-anchor="middle" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="12" font-weight="700" fill="#58a6ff" letter-spacing="2">YOUR DETECTION LINE</text>
+
+  <!-- ===== Lane A ===== -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <rect x="36" y="116" width="1208" height="120" rx="12" fill="#ff9f40" fill-opacity="0.05" stroke="#3a2a14"/>
+    <circle cx="96" cy="176" r="30" fill="#3a2410" stroke="#ff9f40" stroke-width="3"/>
+    <text x="96" y="186" text-anchor="middle" font-size="26" font-weight="800" fill="#ffcf99">A</text>
+    <text x="142" y="166" font-size="18" font-weight="800" fill="#ffab54">Exploit the edge</text>
+    <text x="142" y="190" font-size="12.5" fill="#9fb0bd">T1190 · Exploit Public-Facing Application</text>
+    <rect x="430" y="150" width="406" height="52" rx="9" fill="#161b22" stroke="#3a2a14"/>
+    <text x="633" y="172" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c9d1d9">PHP2Shell · Oracle EBS · Cisco ASA</text>
+    <text x="633" y="190" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c9d1d9">GitLab · Ivanti · Plex · Citrix · PAN-OS</text>
+    <line x1="844" y1="176" x2="878" y2="176" stroke="#ff9f40" stroke-width="4" marker-end="url(#pa_o)"/>
+    <rect x="904" y="133" width="340" height="86" rx="9" fill="#161b22" stroke="#21262d"/>
+    <text x="922" y="158" font-size="11.5" font-weight="700" fill="#58a6ff" letter-spacing="1.5">DETECTION LEVERAGE</text>
+    <text x="922" y="180" font-size="12.5" fill="#c9d1d9">anomalous requests to internet-facing</text>
+    <text x="922" y="198" font-size="12.5" fill="#c9d1d9">services → webshell drops, worker</text>
+    <text x="922" y="214" font-size="12.5" fill="#c9d1d9">crashes, unexpected egress</text>
+  </g>
+
+  <!-- ===== Lane B ===== -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <rect x="36" y="248" width="1208" height="120" rx="12" fill="#4fd1c5" fill-opacity="0.05" stroke="#14332e"/>
+    <circle cx="96" cy="308" r="30" fill="#0e2e29" stroke="#4fd1c5" stroke-width="3"/>
+    <text x="96" y="318" text-anchor="middle" font-size="26" font-weight="800" fill="#9ef0e6">B</text>
+    <text x="142" y="298" font-size="18" font-weight="800" fill="#56d4c7">Abuse trust</text>
+    <text x="142" y="322" font-size="12.5" fill="#9fb0bd">T1199 · T1195 · T1528 · T1078</text>
+    <rect x="430" y="282" width="406" height="52" rx="9" fill="#161b22" stroke="#14332e"/>
+    <text x="633" y="304" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c9d1d9">ConnectWise · LiteLLM · Binance</text>
+    <text x="633" y="322" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c9d1d9">OVHcloud CLI · Rank Math PRO</text>
+    <line x1="844" y1="308" x2="878" y2="308" stroke="#4fd1c5" stroke-width="4" marker-end="url(#pa_t)"/>
+    <rect x="904" y="265" width="340" height="86" rx="9" fill="#161b22" stroke="#21262d"/>
+    <text x="922" y="290" font-size="11.5" font-weight="700" fill="#58a6ff" letter-spacing="1.5">DETECTION LEVERAGE</text>
+    <text x="922" y="312" font-size="12.5" fill="#c9d1d9">service-principal sign-ins, new app</text>
+    <text x="922" y="330" font-size="12.5" fill="#c9d1d9">creds / role grants, install-time code</text>
+    <text x="922" y="346" font-size="12.5" fill="#c9d1d9">exec, non-canonical package sources</text>
+  </g>
+
+  <!-- ===== Lane C ===== -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <rect x="36" y="380" width="1208" height="120" rx="12" fill="#ff5a4d" fill-opacity="0.05" stroke="#3a1a16"/>
+    <circle cx="96" cy="440" r="30" fill="#331413" stroke="#ff5a4d" stroke-width="3"/>
+    <text x="96" y="450" text-anchor="middle" font-size="26" font-weight="800" fill="#ffb3ab">C</text>
+    <text x="142" y="430" font-size="18" font-weight="800" fill="#ff6a5a">Evade at delivery</text>
+    <text x="142" y="454" font-size="12.5" fill="#9fb0bd">T1553.005 · Mark-of-the-Web bypass</text>
+    <rect x="430" y="414" width="406" height="52" rx="9" fill="#161b22" stroke="#3a1a16"/>
+    <text x="633" y="438" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c9d1d9">Windows Shell 0-day</text>
+    <text x="633" y="456" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c9d1d9">CVE-2026-96951</text>
+    <line x1="844" y1="440" x2="878" y2="440" stroke="#ff5a4d" stroke-width="4" marker-end="url(#pa_r)"/>
+    <rect x="904" y="397" width="340" height="86" rx="9" fill="#161b22" stroke="#21262d"/>
+    <text x="922" y="422" font-size="11.5" font-weight="700" fill="#58a6ff" letter-spacing="1.5">DETECTION LEVERAGE</text>
+    <text x="922" y="444" font-size="12.5" fill="#c9d1d9">files from internet origin missing</text>
+    <text x="922" y="462" font-size="12.5" fill="#c9d1d9">Zone.Identifier; docs opening</text>
+    <text x="922" y="478" font-size="12.5" fill="#c9d1d9">without Protected View</text>
+  </g>
+
+  <text x="40" y="548" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="12.5" fill="#6e7681">Full technique matrix: 03_attack_mapping_mitre.md</text>
+</svg>

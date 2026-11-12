@@ -20,6 +20,12 @@ Between **13–15 October 2026**, attackers obtained the application's credentia
 
 Containment: ConnectWise disabled **seven application identities at 07:00 UTC on 17 October**, revoked certificates, invalidated shared credentials, and suspended Cloud Backup, SaaS Security, and Cloud Management.
 
+## The play, on the board
+
+<p align="center">
+  <img src="../assets/diagrams/connectwise_flow.svg" alt="ConnectWise fan-out — one stolen app secret enables app-only sign-in that fans out to 173+ M365 tenants, then self-assigned directory roles and planted backdoor credentials" width="100%">
+</p>
+
 ## Attack chain → MITRE ATT&CK
 
 | Phase | Technique | ID |

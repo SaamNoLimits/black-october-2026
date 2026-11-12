@@ -37,6 +37,10 @@ A technique-centric view across all cases. Use it to prioritize detection covera
 
 ## The three dominant October patterns
 
+<p align="center">
+  <img src="assets/diagrams/attack_patterns.svg" alt="The three plays of Black October: Exploit the edge, Abuse trust, and Evade at delivery — each lane with its cases and the detection leverage that stops it" width="100%">
+</p>
+
 **A. Exploit the edge (T1190).** The single most common initial-access technique this month — PHP, Oracle EBS, Cisco ASA/FTD, GitLab, Ivanti, Plex, Citrix, PAN-OS, Collabora. **Detection leverage:** anomalous requests to internet-facing services + post-exploit child processes/outbound. **Prevention leverage:** patch velocity + shrink the internet-facing surface.
 
 **B. Abuse trust (T1199 / T1195 / T1528 / T1078).** ConnectWise, LiteLLM, Binance, OVHcloud CLI, Rank Math. The attacker arrives as a trusted app, package, or employee. **Detection leverage:** monitor service-principal sign-ins, new app credentials/role grants, install-time code execution, non-canonical package sources. **Prevention leverage:** least-privilege app scopes, short-lived/hardware-bound credentials, signed releases/provenance.

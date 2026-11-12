@@ -91,7 +91,9 @@ black-october-2026/
 └── 08_references.md               every source, per case
 ```
 
-Jump in: **[Executive summary](00_executive_summary.md)** · **[CVE catalog](02_cve_catalog.md)** · **[ATT&CK map](03_attack_mapping_mitre.md)** · **[IOCs](04_iocs/iocs.csv)** · **[Mitigation playbook](07_mitigations_playbook.md)**
+**Jump in:** [Executive summary](00_executive_summary.md) · [CVE catalog](02_cve_catalog.md) · [ATT&CK map](03_attack_mapping_mitre.md) · [IOCs](04_iocs/iocs.csv) · [Mitigation playbook](07_mitigations_playbook.md)
+
+**Section indexes:** [🔍 Cases](01_cases/README.md) · [🧬 IOCs](04_iocs/README.md) · [🛡️ Detections](05_detections/README.md) · [🦀 Rust toolkit](06_rust_tooling/README.md) — each folder has its own guide.
 
 ---
 

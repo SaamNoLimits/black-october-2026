@@ -1,0 +1,41 @@
+title: FortiGate Configuration Export From External IP (FortiBleed-aligned)
+id: 6f2a9d14-8c0b-4e3a-9f77-f0rt1bl33d2026
+status: experimental
+description: >
+  Detects export/download of a FortiGate system configuration from the GUI by an admin from
+  an external/unexpected IP, and the creation of new local admin accounts - both aligned with
+  the FortiBleed credential-harvesting campaign re-warned by the FBI/USSS in October 2026.
+  Exported configs enabled offline credential recovery; rogue local admins are a common
+  persistence step.
+references:
+  - https://www.ic3.gov/CSA/2026/261006.pdf
+  - https://www.recordedfuture.com/blog/critical-fortibleed-campaign
+author: AI Red Team Lead
+date: 2026/11/12
+tags:
+  - attack.credential_access
+  - attack.t1552.001
+  - attack.collection
+  - attack.t1040
+  - attack.persistence
+  - attack.t1136.001
+logsource:
+  product: fortinet
+  service: fortigate
+detection:
+  selection_cfg_export:
+    logid:
+      - '0100044546'   # system configuration downloaded (verify against your FortiOS log schema)
+    action: 'config-download'
+  selection_admin_create:
+    action: 'add'
+    cfgpath|contains: 'system.admin'
+  condition: selection_cfg_export or selection_admin_create
+fields:
+  - user
+  - srcip
+  - action
+  - cfgpath
+falsepositives:
+  - Scheduled/known backup jobs from management IPs. Allow-list your backup source IPs; alert only on external/unexpected srcip. Verify logid values against your FortiOS version.
+level: high

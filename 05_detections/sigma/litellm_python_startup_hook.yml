@@ -1,0 +1,51 @@
+title: LiteLLM 1.107.0 Supply-Chain Artifacts and Startup-Hook Execution
+id: b5d7e2f0-3a19-4c6b-8e44-l1t3llm102026
+status: experimental
+description: >
+  Detects artifacts of the October 2026 LiteLLM 1.107.0 supply-chain compromise: the
+  malicious startup-hook files (cook.pth, cook.py), the stealer run-once/lock markers in
+  /tmp, and network egress to the typosquat exfil domain litellm.dev. The payload executes
+  from a Python .pth file at interpreter start (before any import) and survives package
+  removal, so file-presence detection matters even after uninstall.
+references:
+  - https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-docker/
+  - https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html
+author: AI Red Team Lead
+date: 2026/11/12
+tags:
+  - attack.initial_access
+  - attack.t1195.002
+  - attack.persistence
+  - attack.t1546
+  - attack.exfiltration
+  - attack.t1041
+logsource:
+  category: file_event
+  product: linux
+detection:
+  selection_files:
+    TargetFilename|endswith:
+      - '/cook.pth'
+      - '/cook.py'
+  selection_markers:
+    TargetFilename:
+      - '/tmp/.pc_once_72129118c59f5636c0bb'
+      - '/tmp/remote_code_loader.lock'
+  condition: selection_files or selection_markers
+falsepositives:
+  - None expected for the /tmp markers. cook.pth/cook.py are not legitimate LiteLLM files.
+level: critical
+---
+title: LiteLLM Stealer Exfil Domain Contact (litellm.dev)
+id: f0a9c3b2-77de-4a51-9b6c-l1t3llmNET26
+status: experimental
+description: DNS or HTTP contact to litellm.dev (typosquat; legitimate project is litellm.ai).
+logsource:
+  category: dns
+detection:
+  selection:
+    query|contains: 'litellm.dev'
+  condition: selection
+falsepositives:
+  - Verify the request is to litellm.dev and NOT the legitimate litellm.ai domain.
+level: high

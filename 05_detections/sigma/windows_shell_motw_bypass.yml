@@ -1,0 +1,51 @@
+title: Mark-of-the-Web Bypass Indicators (CVE-2026-96951 class)
+id: 3d8f1c20-6b77-49ae-9a1f-m0tw2026shell
+status: experimental
+description: >
+  Detects execution patterns consistent with the October 2026 Windows Shell MotW
+  security-feature-bypass zero-day (CVE-2026-96951). Internet-origin files whose Zone.Identifier
+  ADS is missing/stripped, followed by a suspicious child process, suggest MotW was bypassed so
+  SmartScreen/Protected View did not fire. Pair with an EDR/file-provenance source that records
+  Zone.Identifier presence.
+references:
+  - https://www.secpod.com/learn/security-research/two-zero-days-1-407-microsoft-flaws-fixed-october-2026-patch-tuesday-delivers-a-massive-update
+  - https://www.techtimes.com/articles/329061/20261015/microsoft-patch-tuesday-october-2026-record-1413-cves-one-already-under-attack.htm
+author: AI Red Team Lead
+date: 2026/11/12
+tags:
+  - attack.defense_evasion
+  - attack.t1553.005
+  - attack.execution
+  - attack.t1204.002
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_parent:
+    ParentImage|endswith:
+      - '\explorer.exe'
+      - '\OpenWith.exe'
+  selection_child:
+    Image|endswith:
+      - '\cmd.exe'
+      - '\powershell.exe'
+      - '\pwsh.exe'
+      - '\wscript.exe'
+      - '\cscript.exe'
+      - '\mshta.exe'
+      - '\rundll32.exe'
+      - '\regsvr32.exe'
+  selection_path:
+    ParentCommandLine|contains:
+      - '\Downloads\'
+      - '\Temp\'
+      - '\AppData\Local\Temp\'
+  condition: selection_parent and selection_child and selection_path
+fields:
+  - ParentImage
+  - Image
+  - CommandLine
+  - User
+falsepositives:
+  - Admins/developers launching script hosts from Downloads/Temp. Prioritize events where the source file lacks a Zone.Identifier despite an internet origin, and where the child process makes outbound connections.
+level: high

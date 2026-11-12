@@ -1,0 +1,8 @@
+# Rust build artifacts
+/06_rust_tooling/target/
+**/target/
+Cargo.lock
+
+# OS / editor noise
+.DS_Store
+*.swp

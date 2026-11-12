@@ -1,0 +1,9 @@
+[package]
+name = "iocmatch"
+version = "0.1.0"
+edition = "2021"
+description = "Match October 2026 IOCs against local logs and files (incl. SHA-256 file hashing)."
+
+[[bin]]
+name = "iocmatch"
+path = "src/main.rs"

@@ -1,0 +1,26 @@
+# Suricata rules — Black October 2026
+# DEFENSIVE network detections for October 2026 activity.
+# SIDs use the local range 92026xxx. Tune thresholds and $HOME_NET/$EXTERNAL_NET to your env.
+# Verify each rule in test mode before production; these are starting points, not drop-in truth.
+
+# --- Case 04: LiteLLM 1.107.0 stealer exfil domain (typosquat; legit project is litellm.ai) ---
+alert dns $HOME_NET any -> any any (msg:"BLACKOCT LiteLLM stealer exfil domain lookup (litellm.dev)"; dns.query; content:"litellm.dev"; nocase; classtype:trojan-activity; reference:url,securitylabs.datadoghq.com/articles/litellm-compromised-pypi-docker/; metadata:case 04; sid:92026001; rev:1;)
+
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BLACKOCT LiteLLM stealer exfil HTTP Host litellm.dev"; flow:established,to_server; http.host; content:"litellm.dev"; nocase; classtype:trojan-activity; metadata:case 04; sid:92026002; rev:1;)
+
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"BLACKOCT LiteLLM stealer exfil POST /healthcheck"; flow:established,to_server; http.method; content:"POST"; http.uri; content:"/healthcheck"; classtype:trojan-activity; metadata:case 04; sid:92026003; rev:1;)
+
+# --- Case 03: ConnectWise Cloud Backup unauthorized auth source IP ---
+alert ip $HOME_NET any -> any any (msg:"BLACKOCT ConnectWise/SkyKick breach source IP 144.172.64.128"; ip.dst:144.172.64.128; classtype:trojan-activity; reference:url,connectwise.com/company/trust/advisories; metadata:case 03; sid:92026010; rev:1;)
+alert ip any any -> $HOME_NET any (msg:"BLACKOCT ConnectWise/SkyKick breach inbound IP 144.172.64.128"; ip.src:144.172.64.128; classtype:trojan-activity; metadata:case 03; sid:92026011; rev:1;)
+
+# --- Case 11: Arista VeloCloud Orchestrator CVE-2026-114625 attacker IPs ---
+alert ip any any -> $HOME_NET any (msg:"BLACKOCT Arista VeloCloud CVE-2026-114625 attacker IP 74.82.197.86"; ip.src:74.82.197.86; classtype:attempted-admin; metadata:case 11; sid:92026020; rev:1;)
+alert ip any any -> $HOME_NET any (msg:"BLACKOCT Arista VeloCloud CVE-2026-114625 attacker IP 38.54.50.151"; ip.src:38.54.50.151; classtype:attempted-admin; metadata:case 11; sid:92026021; rev:1;)
+
+# --- Case 05: PHP2Shell heuristic — anomalous multipart to PHP endpoints (HIGH FP; tune/threshold) ---
+# Intent: surface oversized/odd multipart bodies hitting .php. This is a hunting aid, not a precise signature.
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BLACKOCT PHP2Shell heuristic: multipart POST to .php (investigate)"; flow:established,to_server; http.method; content:"POST"; http.uri; content:".php"; http.header; content:"multipart/form-data"; nocase; threshold:type threshold, track by_src, count 20, seconds 60; classtype:web-application-attack; reference:url,runzero.com/blog/php/; metadata:case 05; sid:92026030; rev:1;)
+
+# --- Case 07: Oracle EBS CVE-2026-101767 — requests to Application Object Library servlet with SQLi markers ---
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"BLACKOCT Oracle EBS CVE-2026-101767 SQLi marker in OA_HTML request"; flow:established,to_server; http.uri; content:"/OA_HTML/"; nocase; pcre:"/(union\s+select|%27|'\s*or\s*1=1|waitfor\s+delay|sleep\s*\()/i"; classtype:web-application-attack; reference:cve,2026-101767; metadata:case 07; sid:92026040; rev:1;)

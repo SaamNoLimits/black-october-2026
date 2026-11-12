@@ -1,0 +1,22 @@
+indicator,type,case,context,first_seen,confidence,source_note
+144.172.64.128,ipv4,03,ConnectWise Cloud Backup unauthorized M365 auth source,2026-10-15,high,Quisitive/Huntress published
+74.82.197.86,ipv4,11,Arista VeloCloud Orchestrator CVE-2026-114625 attacker IP,2026-10,high,Arista advisory
+38.54.50.151,ipv4,11,Arista VeloCloud Orchestrator CVE-2026-114625 attacker IP,2026-10,high,Arista advisory
+litellm.dev,domain,04,LiteLLM 1.107.0 stealer exfil (typosquat of litellm.ai),2026-10-13,high,multiple vendors; legit project is .ai
+litellm.dev/healthcheck,url,04,LiteLLM stealer exfil POST path,2026-10-21,high,Datadog/Socket/HackerNews
+506e08f9-6e9a-4da4-942b-a099a03644ae,entra_app_id,03,ConnectWise Cloud Backup (publisher SkyKick) app,2026-10-13,high,ConnectWise/Huntress/WatchGuard
+24205314-2b89-4e07-a2a4-579e898a5640,entra_app_id,03,ConnectWise Cloud Management - MS Teams app,2026-10-13,high,Huntress/Quisitive
+cook.pth,filename,04,LiteLLM startup-hook loader (runs before import),2026-10-21,high,TheHackerNews/Socket
+cook.py,filename,04,LiteLLM privcollect infostealer,2026-10-21,high,TheRegister/Socket
+sitecustomize.py,filename,04,LiteLLM RAT (malicious variant in 1.107.0 wheel),2026-10-21,medium,TheRegister; note legit file name - context matters
+/tmp/.pc_once_72129118c59f5636c0bb,filepath,04,LiteLLM stealer run-once marker,2026-10-21,high,Datadog Security Labs
+/tmp/remote_code_loader.lock,filepath,04,LiteLLM remote loader lockfile,2026-10-21,high,Datadog Security Labs
+12d4ccc5c6f8d35cf4f2cf233b7f3e418e863e657d81ff5f5fc9e210005b9484,sha256,04,litellm-1.107.0-cp310-abi3-win_amd64.whl,2026-10-21,high,Gurucul
+0aaf7ba346d41ef2f40390436738b001180d5a1c03aa093f121078a9969d9a1a,sha256,04,malicious litellm macOS ARM64 wheel,2026-10-21,high,Datadog Security Labs
+1bbcb1443bc962e45f5aad53fe3d2c30600e0379715fb6c664cdd3ac126c339e,sha256,04,infected litellm Docker image index,2026-10-21,high,Datadog Security Labs
+litellm==1.107.0,package,04,malicious PyPI release (all 7 wheels + sdist),2026-10-21,high,PyPI quarantined ~13:20 UTC
+ghcr.io/berriai/litellm:v1.107.0,container_tag,04,malicious LiteLLM image tag,2026-10-21,high,LiteLLM postmortem
+litellm/litellm:latest,container_tag,04,malicious during 11:46-14:20 UTC window,2026-10-21,high,LiteLLM postmortem
+litellm/litellm:main-latest,container_tag,04,malicious during exposure window,2026-10-21,high,LiteLLM postmortem
+litellm/litellm:main-stable,container_tag,04,malicious during exposure window,2026-10-21,high,LiteLLM postmortem
+letters9813,github_account,04,attacker GitHub account created during LiteLLM compromise,2026-10-13,medium,Brandefense/SafeDep

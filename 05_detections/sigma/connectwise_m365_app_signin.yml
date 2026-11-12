@@ -1,0 +1,59 @@
+title: ConnectWise Cloud Backup (SkyKick) Service Principal Sign-In or Credential Abuse
+id: 7a1e3c9a-0b2d-4e8f-9c21-con3ctw1se26
+status: experimental
+description: >
+  Detects sign-ins by, or credential/role changes to, the ConnectWise Cloud Backup
+  (formerly SkyKick) and ConnectWise Cloud Management application identities abused in the
+  October 2026 supply-chain breach of 173+ Microsoft 365 tenants. App-only (service
+  principal) authentication by these app IDs, or additions of credentials/directory roles
+  to them, are high-fidelity signals.
+references:
+  - https://www.connectwise.com/company/trust/advisories
+  - https://www.bleepingcomputer.com/news/security/hackers-breach-microsoft-365-tenants-via-connectwise-supply-chain-attack/
+author: AI Red Team Lead
+date: 2026/11/12
+tags:
+  - attack.initial_access
+  - attack.t1199
+  - attack.persistence
+  - attack.t1098.001
+  - attack.privilege_escalation
+  - attack.t1098.003
+logsource:
+  product: azure
+  service: signinlogs
+detection:
+  selection_app:
+    Properties.AppId|contains:
+      - '506e08f9-6e9a-4da4-942b-a099a03644ae'
+      - '24205314-2b89-4e07-a2a4-579e898a5640'
+  selection_ip:
+    IPAddress: '144.172.64.128'
+  condition: selection_app or selection_ip
+falsepositives:
+  - Legitimate ConnectWise Cloud Backup activity prior to 2026-10-13 (pre-compromise). Scope to on/after 2026-10-13 and correlate with audit-log role/credential changes.
+level: high
+---
+title: ConnectWise/SkyKick App Credential or Role Grant (Entra Audit)
+id: 2c44b8d1-9f6a-47aa-bb0e-con3ctw1seAUD
+status: experimental
+description: Directory audit events adding credentials or privileged roles to the ConnectWise/SkyKick app identities.
+logsource:
+  product: azure
+  service: auditlogs
+detection:
+  selection_op:
+    OperationName:
+      - 'Add service principal credentials'
+      - 'Add app role assignment to service principal'
+      - 'Add member to role'
+  selection_target:
+    TargetResources|contains:
+      - '506e08f9-6e9a-4da4-942b-a099a03644ae'
+      - '24205314-2b89-4e07-a2a4-579e898a5640'
+      - 'SkyKick'
+      - 'Cloud Backup'
+  condition: selection_op and selection_target
+falsepositives:
+  - Sanctioned re-consent through ConnectWise's new application after verification.
+level: high

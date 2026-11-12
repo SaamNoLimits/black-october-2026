@@ -1,0 +1,11 @@
+asset_id,product_key,version
+web-prod-01,php-8.3,8.3.34
+web-prod-02,php-8.3,8.3.36
+web-edge-07,php-8.2,8.2.30
+ci-gitlab-01,gitlab,19.4.1
+vpn-asa-01,cisco-asa-9.20,9.20.4.12
+vpn-ftd-02,cisco-ftd-7.4,7.4.9
+vpn-ivanti-01,ivanti-ics-25.1,25.1.1.1
+erp-ebs-01,oracle-ebs,12.2.14
+ndc-netscaler-01,citrix-netscaler-14.1,14.1.70.10
+unknown-box-99,some-random-appliance,1.0.0

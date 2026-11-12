@@ -1,0 +1,9 @@
+[package]
+name = "kevcheck"
+version = "0.1.0"
+edition = "2021"
+description = "Compare an asset inventory against October 2026 fixed-version rules (KEV triage)."
+
+[[bin]]
+name = "kevcheck"
+path = "src/main.rs"

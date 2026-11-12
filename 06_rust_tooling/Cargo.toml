@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/kevcheck",
+    "crates/iocmatch",
+    "crates/logtriage",
+]
+
+# Black October 2026 — defensive red-team toolkit.
+# std-only (no external crates), so it builds offline with a stock Rust toolchain:
+#   cd 06_rust_tooling && cargo build --release
+# Binaries land in target/release/{kevcheck,iocmatch,logtriage}.
+
+[profile.release]
+opt-level = 2

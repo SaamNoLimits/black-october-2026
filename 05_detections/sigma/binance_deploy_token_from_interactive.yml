@@ -1,0 +1,46 @@
+title: Container Deploy Credential Used From Interactive/Workstation Session
+id: a8c3e510-4d2f-4b9a-bf63-tr4d3rtr41t0r
+status: experimental
+description: >
+  Behavioral detection inspired by the October 2026 Binance/TraderTraitor heist, where a
+  standing container-deploy token held on an engineer workstation was used to deploy a
+  container that reached the wallet signing service. Alerts when a deployment credential is
+  used from an interactive (non-CI) context, or when a signing/withdrawal service is called by
+  a freshly deployed workload. Adapt resource names to your orchestration/audit schema.
+references:
+  - https://www.paloaltonetworks.com/blog/security-operations/how-a-developer-endpoint-became-the-path-to-binances-6-3b-heist/
+author: AI Red Team Lead
+date: 2026/11/12
+tags:
+  - attack.lateral_movement
+  - attack.t1570
+  - attack.execution
+  - attack.t1610
+  - attack.impact
+  - attack.t1657
+logsource:
+  category: application
+  product: kubernetes
+  service: audit
+detection:
+  selection_deploy:
+    verb:
+      - 'create'
+    objectRef.resource:
+      - 'pods'
+      - 'deployments'
+  filter_ci:
+    user.username|contains:
+      - 'system:serviceaccount:ci'
+      - 'gitlab-runner'
+      - 'github-actions'
+      - 'jenkins'
+  condition: selection_deploy and not filter_ci
+fields:
+  - user.username
+  - sourceIPs
+  - objectRef.namespace
+  - objectRef.resource
+falsepositives:
+  - Legitimate human-initiated deploys. Baseline who deploys in each namespace; deploys should normally originate from CI service accounts, not interactive user identities. Treat interactive deploys into sensitive namespaces (signing/wallet/payments) as high priority.
+level: medium

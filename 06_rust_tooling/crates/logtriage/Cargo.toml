@@ -1,0 +1,9 @@
+[package]
+name = "logtriage"
+version = "0.1.0"
+edition = "2021"
+description = "Heuristically flag web/access-log lines tied to October 2026 exploitation patterns."
+
+[[bin]]
+name = "logtriage"
+path = "src/main.rs"

@@ -1,0 +1,28 @@
+# Black October 2026 fixed-version ruleset for kevcheck
+# Columns (TAB-separated): product_key <TAB> cve <TAB> fixed_version <TAB> severity <TAB> note
+# product_key ties to your inventory's product column. Keep one product per fix "train".
+# Fixed versions are the first fixed release per the vendor advisory (see 02_cve_catalog.md).
+php-8.5	CVE-2026-109618/109619	8.5.12	critical-KEV	Patch then restart PHP workers (Case 05)
+php-8.4	CVE-2026-109618/109619	8.4.27	critical-KEV	Patch then restart PHP workers (Case 05)
+php-8.3	CVE-2026-109618/109619	8.3.36	critical-KEV	Patch then restart PHP workers (Case 05)
+php-8.2	CVE-2026-109618/109619	8.2.35	critical-KEV	Patch then restart PHP workers (Case 05)
+gitlab	CVE-2026-97229	19.4.2	KEV	Also fixed in 19.2.8/19.3.5 trains; rotate CI secrets (Case 09)
+gitlab-19.3	CVE-2026-97229	19.3.5	KEV	Rotate CI/CD secrets after patch (Case 09)
+gitlab-19.2	CVE-2026-97229	19.2.8	KEV	Rotate CI/CD secrets after patch (Case 09)
+cisco-asa-9.18	CVE-2026-76418	9.18.4.96	high-KEV	No full workaround; upgrade (Case 08)
+cisco-asa-9.20	CVE-2026-76418	9.20.4.50	high-KEV	No full workaround; upgrade (Case 08)
+cisco-asa-9.22	CVE-2026-76418	9.22.3.200	high-KEV	No full workaround; upgrade (Case 08)
+cisco-ftd-7.0	CVE-2026-76418	7.0.11	high-KEV	Upgrade (Case 08)
+cisco-ftd-7.2	CVE-2026-76418	7.2.13	high-KEV	Upgrade (Case 08)
+cisco-ftd-7.4	CVE-2026-76418	7.4.9	high-KEV	Upgrade (Case 08)
+cisco-ftd-7.6	CVE-2026-76418	7.6.7	high-KEV	Upgrade (Case 08)
+cisco-ftd-7.7	CVE-2026-76418	7.7.14	high-KEV	Upgrade (Case 08)
+cisco-ftd-10.0	CVE-2026-76418	10.0.3	high-KEV	Upgrade (Case 08)
+cisco-ftd-10.1	CVE-2026-76418	10.1.1	high-KEV	Upgrade (Case 08)
+ivanti-ics-25.1	CVE-2026-104935	25.1.1.3	high-KEV	UTA0576 chain; run ICT, consider rebuild (Case 10)
+ivanti-ics-22.8	CVE-2026-104935	22.8.2.6	high-KEV	Maps to 22.8R2.6; run ICT (Case 10)
+oracle-ebs	CVE-2026-101767	12.2.16	critical	Apply Oct 2026 CPU to EBS 12.2.3-12.2.15 (MOS KA923, Case 07)
+citrix-netscaler-14.1	CVE-2026-88771	14.1.73.46	KEV	Covers CVE-2026-107406 (Case 11)
+citrix-netscaler-13.1	CVE-2026-88771	13.1.64.29	KEV	Upgrade (Case 11)
+# NOTE: LiteLLM is an exact-bad-version problem (1.107.0 is malicious; 1.106.2 is safe),
+# not a version floor, so it is intentionally NOT modeled here. Use iocmatch for LiteLLM.

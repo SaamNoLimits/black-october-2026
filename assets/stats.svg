@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 210" width="1280" height="210" role="img" aria-label="Black October 2026 by the numbers">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#11161f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="210" rx="10" fill="url(#sbg)"/>
+
+  <!-- card template: 5 cards -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <!-- card 1 -->
+    <g transform="translate(28,28)">
+      <rect width="226" height="154" rx="12" fill="#161b22" stroke="#21262d"/>
+      <rect x="0" y="0" width="226" height="4" rx="2" fill="#ff4d4d"/>
+      <text x="113" y="74" text-anchor="middle" font-size="42" font-weight="800" fill="#ff6a5a">$6.34B</text>
+      <text x="113" y="104" text-anchor="middle" font-size="13" fill="#8b949e">stolen from Binance</text>
+      <text x="113" y="124" text-anchor="middle" font-size="12" fill="#6e7681">in one night · DPRK</text>
+    </g>
+    <!-- card 2 -->
+    <g transform="translate(276,28)">
+      <rect width="226" height="154" rx="12" fill="#161b22" stroke="#21262d"/>
+      <rect x="0" y="0" width="226" height="4" rx="2" fill="#4fd1c5"/>
+      <text x="113" y="74" text-anchor="middle" font-size="42" font-weight="800" fill="#56d4c7">86,644</text>
+      <text x="113" y="104" text-anchor="middle" font-size="13" fill="#8b949e">Fortinet creds harvested</text>
+      <text x="113" y="124" text-anchor="middle" font-size="12" fill="#6e7681">FortiBleed · 194 countries</text>
+    </g>
+    <!-- card 3 -->
+    <g transform="translate(524,28)">
+      <rect width="226" height="154" rx="12" fill="#161b22" stroke="#21262d"/>
+      <rect x="0" y="0" width="226" height="4" rx="2" fill="#ff9f40"/>
+      <text x="113" y="74" text-anchor="middle" font-size="42" font-weight="800" fill="#ffab54">1,413</text>
+      <text x="113" y="104" text-anchor="middle" font-size="13" fill="#8b949e">Microsoft CVEs patched</text>
+      <text x="113" y="124" text-anchor="middle" font-size="12" fill="#6e7681">record · 1 exploited 0-day</text>
+    </g>
+    <!-- card 4 -->
+    <g transform="translate(772,28)">
+      <rect width="226" height="154" rx="12" fill="#161b22" stroke="#21262d"/>
+      <rect x="0" y="0" width="226" height="4" rx="2" fill="#c792ea"/>
+      <text x="113" y="74" text-anchor="middle" font-size="42" font-weight="800" fill="#cf9cee">173+</text>
+      <text x="113" y="104" text-anchor="middle" font-size="13" fill="#8b949e">M365 tenants breached</text>
+      <text x="113" y="124" text-anchor="middle" font-size="12" fill="#6e7681">one stolen vendor key</text>
+    </g>
+    <!-- card 5 -->
+    <g transform="translate(1020,28)">
+      <rect width="232" height="154" rx="12" fill="#161b22" stroke="#21262d"/>
+      <rect x="0" y="0" width="232" height="4" rx="2" fill="#ff4d4d"/>
+      <text x="116" y="74" text-anchor="middle" font-size="42" font-weight="800" fill="#ff6a5a">1,127</text>
+      <text x="116" y="104" text-anchor="middle" font-size="13" fill="#8b949e">ransomware victims</text>
+      <text x="116" y="124" text-anchor="middle" font-size="12" fill="#6e7681">in October · +25.8% MoM</text>
+    </g>
+  </g>
+</svg>

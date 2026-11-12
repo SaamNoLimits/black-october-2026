@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" width="1000" height="660" role="img" aria-label="October 2026 incident timeline">
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#11161f"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4fd1c5"/>
+      <stop offset="0.5" stop-color="#ff9f40"/>
+      <stop offset="1" stop-color="#ff5a4d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="660" rx="12" fill="url(#tbg)"/>
+
+  <text x="40" y="48" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="22" font-weight="800" fill="#f0f6fc">OCTOBER 2026 · INCIDENT TIMELINE</text>
+
+  <!-- legend -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="12" fill="#8b949e">
+    <circle cx="566" cy="40" r="5" fill="#ff5a4d"/><text x="576" y="44">Heist</text>
+    <circle cx="634" cy="40" r="5" fill="#ff9f40"/><text x="644" y="44">Edge CVE</text>
+    <circle cx="726" cy="40" r="5" fill="#c792ea"/><text x="736" y="44">Supply chain</text>
+    <circle cx="840" cy="40" r="5" fill="#4fd1c5"/><text x="850" y="44">Identity</text>
+  </g>
+
+  <!-- spine -->
+  <rect x="197" y="86" width="4" height="508" rx="2" fill="url(#spine)" opacity="0.65"/>
+
+  <!-- rows -->
+  <g font-family="'Segoe UI',system-ui,Arial,sans-serif">
+    <!-- Oct 6 -->
+    <g>
+      <text x="178" y="105" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 6</text>
+      <circle cx="199" cy="100" r="7" fill="#4fd1c5" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="96" font-size="15.5" font-weight="600" fill="#f0f6fc">FortiBleed — FBI/USSS joint advisory</text>
+      <text x="228" y="116" font-size="12.5" fill="#8b949e">86,644 Fortinet credentials, 194 countries · no single CVE</text>
+    </g>
+    <!-- Oct 13 -->
+    <g>
+      <text x="178" y="163" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 13</text>
+      <circle cx="199" cy="158" r="7" fill="#ff9f40" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="154" font-size="15.5" font-weight="600" fill="#f0f6fc">Patch Tuesday — 1,413 CVEs (record)</text>
+      <text x="228" y="174" font-size="12.5" fill="#8b949e">Windows Shell Mark-of-the-Web 0-day · CVE-2026-96951</text>
+    </g>
+    <!-- Oct 15 -->
+    <g>
+      <text x="178" y="221" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 15</text>
+      <circle cx="199" cy="216" r="7" fill="#c792ea" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="212" font-size="15.5" font-weight="600" fill="#f0f6fc">ConnectWise / SkyKick breach</text>
+      <text x="228" y="232" font-size="12.5" fill="#8b949e">173+ Microsoft 365 tenants via one stolen app key</text>
+    </g>
+    <!-- Oct 20 -->
+    <g>
+      <text x="178" y="279" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 20</text>
+      <circle cx="199" cy="274" r="7" fill="#ff9f40" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="270" font-size="15.5" font-weight="600" fill="#f0f6fc">Oracle October CPU</text>
+      <text x="228" y="290" font-size="12.5" fill="#8b949e">EBS unauthenticated SQLi → RCE · CVE-2026-101767 (9.8)</text>
+    </g>
+    <!-- Oct 21 a -->
+    <g>
+      <text x="178" y="337" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 21</text>
+      <circle cx="199" cy="332" r="7" fill="#ff9f40" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="328" font-size="15.5" font-weight="600" fill="#f0f6fc">PHP2Shell — pre-auth RCE in PHP</text>
+      <text x="228" y="348" font-size="12.5" fill="#8b949e">CVE-2026-109618 / 109619 (9.2) · exploited before the patch</text>
+    </g>
+    <!-- Oct 21 b -->
+    <g>
+      <text x="178" y="395" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 21</text>
+      <circle cx="199" cy="390" r="7" fill="#c792ea" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="386" font-size="15.5" font-weight="600" fill="#f0f6fc">LiteLLM 1.107.0 poisoned</text>
+      <text x="228" y="406" font-size="12.5" fill="#8b949e">credential stealer on PyPI + Docker · .pth startup hook</text>
+    </g>
+    <!-- Oct 28 -->
+    <g>
+      <text x="178" y="453" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 28</text>
+      <circle cx="199" cy="448" r="7" fill="#ff9f40" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="444" font-size="15.5" font-weight="600" fill="#f0f6fc">Cisco ASA/FTD SSL-VPN 0-day</text>
+      <text x="228" y="464" font-size="12.5" fill="#8b949e">CVE-2026-76418 · unauthenticated DoS · KEV</text>
+    </g>
+    <!-- Oct 29 a -->
+    <g>
+      <text x="178" y="511" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 29</text>
+      <circle cx="199" cy="506" r="8" fill="#ff5a4d" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="502" font-size="15.5" font-weight="700" fill="#ffffff">Binance drained — $6.34B</text>
+      <text x="228" y="522" font-size="12.5" fill="#9aa4b2">TraderTraitor (DPRK) · largest crypto heist on record</text>
+    </g>
+    <!-- Oct 29 b -->
+    <g>
+      <text x="178" y="569" text-anchor="end" font-size="15" font-weight="700" fill="#c9d1d9">Oct 29</text>
+      <circle cx="199" cy="564" r="7" fill="#ff9f40" stroke="#0d1117" stroke-width="3"/>
+      <text x="228" y="560" font-size="15.5" font-weight="600" fill="#f0f6fc">GitLab CI/CD RCE</text>
+      <text x="228" y="580" font-size="12.5" fill="#8b949e">CVE-2026-97229 · added to CISA KEV</text>
+    </g>
+  </g>
+
+  <text x="40" y="632" font-family="'Segoe UI',system-ui,Arial,sans-serif" font-size="11.5" fill="#6e7681">Selected events. Full detail and sources in /01_cases and /08_references.md.</text>
+</svg>
